@@ -4,8 +4,26 @@
     {
       "name": "prototypes",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "4321", "--directory", "prototypes"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4321",
+        "--directory",
+        "prototypes"
+      ],
       "port": 4321
+    },
+    {
+      "name": "prototypes-alt",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4322",
+        "--directory",
+        "prototypes"
+      ],
+      "port": 4322
     }
   ]
 }
