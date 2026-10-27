@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Video Downloader for Chrome – Save &amp; Download Any Video with Pins | Frevana</title>
-<meta name="description" content="Pins is a video downloader for Chrome. Pin videos from social and web pages with one click, download them, and keep every reference in one library.">
+<title>Social Video Downloader for Chrome – Pins by Frevana</title>
+<meta name="description" content="Pins is a social video downloader for Chrome. Pin videos from Instagram, TikTok, X, LinkedIn, Facebook and any website in one click, download them, and keep every reference in one library.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -59,8 +59,7 @@
   .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 48px; padding: 0 16px; max-width: 1320px; margin: 0 auto; }
   @media (min-width: 768px) { .nav-inner { padding: 0 40px; } }
   .brand { display: flex; align-items: center; gap: 8px; font-weight: 600; letter-spacing: -0.02em; font-size: 17px; }
-  .brand-mark { width: 22px; height: 22px; border-radius: 6px; background: var(--ink); display: grid; place-items: center; }
-  .brand-mark svg { width: 12px; height: 12px; }
+  .brand-mark { width: 22px; height: 22px; flex-shrink: 0; }
   .nav-links { display: none; gap: 2px; }
   @media (min-width: 900px) { .nav-links { display: flex; } }
   .nav-links a { font-size: 13px; color: var(--text-nav); padding: 6px 10px; border-radius: 10px; transition: background-color .15s var(--ease), color .15s var(--ease); }
@@ -106,8 +105,7 @@
   @media (min-width: 768px) { .hero { padding: 28px 40px 48px; } }
   .hero-glow { position: absolute; inset: 0 0 auto 0; height: 420px; background: radial-gradient(ellipse at top, var(--green-glow) 0%, var(--bg-page) 62%); pointer-events: none; }
   .hero-grid { position: relative; display: grid; gap: 32px; align-items: center; }
-  @media (min-width: 768px) { .hero-grid { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 40px; } }
-  @media (min-width: 1024px) { .hero-grid { gap: 48px; } }
+  @media (min-width: 1024px) { .hero-grid { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 48px; } }
   .crumbs { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
   .crumbs span:last-child { color: var(--ink); }
   .app-id { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
@@ -119,43 +117,9 @@
   .hero-meta .ok { color: var(--green); }
   .hero-ctas { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
 
-  /* Product mock: browser + Pin panel */
+  /* Product screenshot: Pin panel on Instagram */
   .frame { position: relative; border-radius: 16px; overflow: hidden; background: #0a0a0a; border: 1px solid #2a2a2a; box-shadow: 0 1px 3px rgba(0,0,0,.35), 0 18px 40px rgba(0,0,0,.45); }
-  .frame-bar { display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 12px; background: #161616; border-bottom: 1px solid #222; }
-  .dots { display: flex; gap: 6px; }
-  .dots i { width: 9px; height: 9px; border-radius: 50%; background: #3a3a3a; }
-  .url { flex: 1; height: 20px; border-radius: 6px; background: #222; color: #8a8a8a; font-size: 11px; display: flex; align-items: center; padding: 0 10px; overflow: hidden; white-space: nowrap; }
-  .frame-body { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 42%); gap: 10px; padding: 10px; aspect-ratio: 16 / 10; overflow: hidden; }
-  .feed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; align-content: start; }
-  .tile { position: relative; aspect-ratio: 4 / 5; border-radius: 3px; overflow: hidden; }
-  .tile::after { content: ""; position: absolute; top: 7px; right: 7px; width: 14px; height: 14px; border-radius: 4px; background: rgba(255,255,255,.85) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 5v14l11-7z' fill='%23111'/%3E%3C/svg%3E") center / 9px no-repeat; }
-  .t1 { background: linear-gradient(160deg, #d9d4cc, #9d958a); }
-  .t2 { background: linear-gradient(160deg, #c7d3e6, #6f7f9a); }
-  .t3 { background: linear-gradient(160deg, #3b3b3b, #121212); }
-  .t4 { background: linear-gradient(160deg, #e9c2a6, #a5654a); }
-  .t5 { background: linear-gradient(160deg, #42523f, #1c241b); }
-  .t6 { background: linear-gradient(160deg, #7a1b22, #2b0a0d); }
-  .hover-pill { position: absolute; top: 8px; left: 8px; z-index: 2; display: flex; align-items: center; gap: 5px; padding: 4px 8px 4px 5px; border-radius: var(--radius-pill); background: #111; color: #fff; font-size: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.35); }
-  .hover-pill b { width: 14px; height: 14px; border-radius: 4px; background: var(--pin-green); display: grid; place-items: center; }
-  .hover-pill b svg { width: 8px; height: 8px; }
-  .tile.hovered { outline: 2px solid var(--pin-green); outline-offset: -2px; }
-
-  .panel { min-height: 0; background: #1b1b1b; border: 1px solid #2c2c2c; border-radius: 12px; padding: 10px; display: flex; flex-direction: column; gap: 8px; color: #eee; box-shadow: 0 12px 30px rgba(0,0,0,.5); }
-  .panel-head { display: flex; align-items: center; justify-content: space-between; font-size: 12px; font-weight: 500; }
-  .panel-head span { color: #777; font-size: 14px; line-height: 1; }
-  .seg { display: grid; grid-template-columns: 1fr 1fr; background: #262626; border-radius: var(--radius-pill); padding: 2px; font-size: 10px; text-align: center; }
-  .seg span { padding: 4px 0; border-radius: var(--radius-pill); color: #aaa; }
-  .seg .on { background: var(--pin-green); color: #10241a; }
-  .found { font-size: 10px; color: #aaa; }
-  .preview { flex: 1; min-height: 72px; border-radius: 8px; background: linear-gradient(170deg, #e9c2a6, #a5654a 70%, #5a3022); position: relative; overflow: hidden; }
-  .preview .bar { position: absolute; left: 8px; right: 8px; bottom: 8px; height: 3px; border-radius: 3px; background: rgba(255,255,255,.3); }
-  .preview .bar::before { content: ""; position: absolute; inset: 0 60% 0 0; border-radius: 3px; background: #fff; }
-  .p-btn { height: 26px; border-radius: var(--radius-pill); display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 10.5px; }
-  .p-btn svg { width: 11px; height: 11px; }
-  .p-btn.pin { background: var(--pin-green); color: #10241a; }
-  .p-btn.dl { background: #fff; color: #111; }
-  .p-btn.ghost { background: #262626; color: #ccc; }
-  @media (max-width: 480px) { .p-btn.ghost { display: none; } }
+  .frame img { display: block; width: 100%; height: auto; }
 
   /* ---------- Feature check cards ---------- */
   .grid-features { margin-top: 20px; display: grid; gap: 12px; }
@@ -167,24 +131,39 @@
   .check svg { width: 12px; height: 12px; }
 
   /* ---------- Steps ---------- */
-  .steps { margin-top: 20px; display: grid; gap: 12px; }
-  @media (min-width: 768px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+  .how-grid { margin-top: 20px; display: grid; gap: 24px; align-items: center; }
+  @media (min-width: 900px) { .how-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; } }
+  .steps { display: grid; gap: 12px; list-style: none; }
   .step { background: var(--surface-muted); border-radius: 20px; padding: 20px; }
-  .step-n { font-size: 12px; color: var(--text-muted); letter-spacing: .04em; }
-  .step h3 { margin-top: 10px; font-size: 20px; font-weight: 400; letter-spacing: -0.03em; }
-  .step p { margin-top: 8px; font-size: 14px; line-height: 1.625; color: var(--text-body); }
+  .step h3 { font-size: 20px; font-weight: 400; letter-spacing: -0.03em; }
+  .step p { margin-top: 8px; font-size: 15px; line-height: 1.625; color: var(--text-body); }
+
+  /* ---------- My Pins library ---------- */
+  .lib-grid { display: grid; gap: 24px; align-items: center; }
+  @media (min-width: 900px) { .lib-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; } }
+  .lib-text { max-width: 460px; }
+  .lib-text p { margin-top: 12px; font-size: 15px; line-height: 28px; color: var(--text-secondary); }
+  .lib-text ul { margin-top: 20px; display: grid; gap: 14px; font-size: 15px; line-height: 1.55; color: var(--text-body); }
+  .lib-text li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; }
+  .lib-text li b { font-weight: 500; color: var(--ink); }
+  .lib-link { display: inline-block; margin-top: 20px; font-size: 14px; color: var(--ink); border-bottom: 1px solid var(--border); transition: border-color .15s var(--ease); }
+  .lib-link:hover { border-color: var(--ink); }
+  .lib-shot { border-radius: 16px; overflow: hidden; background: #fff; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 18px 40px rgba(0,0,0,.12); }
+  .lib-shot img { width: 100%; height: auto; }
+  .how-video { background: #000; }
+  .how-video video { display: block; width: 100%; height: auto; aspect-ratio: 1600 / 1040; }
 
   /* ---------- Why + aside ---------- */
   .why-grid { display: grid; gap: 24px; }
   @media (min-width: 1024px) { .why-grid { grid-template-columns: minmax(0, 1.4fr) minmax(280px, .8fr); align-items: start; } }
   .prose { margin-top: 16px; display: grid; gap: 16px; }
-  .prose p { font-size: 15px; line-height: 28px; color: var(--text-secondary); }
+  .prose p { max-width: 68ch; font-size: 15px; line-height: 28px; color: var(--text-secondary); }
   .aside { background: var(--surface-muted); border-radius: 24px; padding: 24px 20px; }
   @media (min-width: 640px) { .aside { padding: 24px; } }
   .aside h3 { margin-top: 6px; font-size: 18px; font-weight: 400; letter-spacing: -0.02em; }
   .aside dl { margin-top: 20px; display: grid; gap: 12px; font-size: 13px; }
   .aside dl div { display: flex; justify-content: space-between; gap: 12px; }
-  .aside dt { color: var(--text-muted); }
+  .aside dt, .aside .eyebrow { color: #6b6b6b; }
   .aside dd { text-align: right; }
   .aside .tags { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 6px; }
   .aside .btn { margin-top: 24px; width: 100%; height: 40px; font-size: 13px; }
@@ -224,7 +203,7 @@
   .foot-brand { grid-column: 1 / -1; }
   @media (min-width: 768px) { .foot-brand { grid-column: auto; } }
   .foot-brand p { margin-top: 12px; max-width: 240px; font-size: 13px; line-height: 1.6; color: var(--text-secondary); }
-  .foot-col h4 { font-size: 12px; font-weight: 400; color: var(--text-faint); margin-bottom: 12px; }
+  .foot-col h4 { font-size: 12px; font-weight: 400; color: #737373; margin-bottom: 12px; }
   .foot-col li { font-size: 13px; margin-bottom: 10px; }
   .copyright { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--divider); text-align: center; font-size: 12px; color: var(--text-muted); }
 
@@ -235,6 +214,7 @@
 
 <!-- Inline icons -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-frevana" viewBox="0 0 720 732"><circle cx="108" cy="108" r="108" fill="#4fb14f"/><circle cx="360" cy="108" r="108" fill="#72c174"/><path d="M612 0h108v108a108 108 0 1 1-108-108z" fill="#97d097"/><circle cx="108" cy="366" r="108" fill="#72c174"/><circle cx="360" cy="366" r="108" fill="#97d097"/><circle cx="108" cy="624" r="108" fill="#97d097"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 17v5M9 10.76V6h6v4.76l2 2.24v2H7v-2z M8 2h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -245,7 +225,7 @@
 <header class="nav">
   <div class="nav-inner">
     <a class="brand" href="https://www.frevana.com/">
-      <span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M5 4h14v4H9v3h8v4H9v5H5z" fill="#8fd0a3"/></svg></span>
+      <svg class="brand-mark" aria-hidden="true"><use href="#i-frevana"/></svg>
       Frevana
     </a>
     <nav class="nav-links" aria-label="Primary">
@@ -275,7 +255,7 @@
           <span class="app-icon"><svg viewBox="0 0 24 24" style="color:#8fd0a3"><use href="#i-pin"/></svg></span>
           <span class="eyebrow">Chrome extension · Video downloader</span>
         </div>
-        <h1>Pins: the video downloader for Chrome</h1>
+        <h1>Pins: the social video downloader</h1>
         <p class="hero-sub">Pin any video you find on social and the web in one click, then download it, keep it in your library, or remake it with AI.</p>
         <p class="hero-meta"><span class="ok">●</span> Works in Google Chrome <span>·</span> Videos, images, posts &amp; text</p>
         <div class="hero-ctas">
@@ -286,31 +266,9 @@
         </div>
       </div>
 
-      <div class="frame" role="img" aria-label="Pins panel detecting a video on a social feed, with Pin video and Download buttons">
-        <div class="frame-bar"><span class="dots"><i></i><i></i><i></i></span><span class="url">instagram.com/explore</span></div>
-        <div class="frame-body">
-          <div class="feed">
-            <div class="tile t1"></div>
-            <div class="tile t2"></div>
-            <div class="tile t3"></div>
-            <div class="tile t4 hovered"><span class="hover-pill"><b><svg viewBox="0 0 24 24" style="color:#10241a"><use href="#i-pin"/></svg></b>Pin</span></div>
-            <div class="tile t5"></div>
-            <div class="tile t6"></div>
-            <div class="tile t2"></div>
-            <div class="tile t5"></div>
-            <div class="tile t1"></div>
-          </div>
-          <div class="panel">
-            <div class="panel-head">Pin <span>×</span></div>
-            <div class="seg"><span class="on">Add Pin</span><span>My Pins</span></div>
-            <div class="found">Video found</div>
-            <div class="preview"><span class="bar"></span></div>
-            <div class="p-btn pin"><svg><use href="#i-pin"/></svg>Pin video</div>
-            <div class="p-btn dl"><svg><use href="#i-download"/></svg>Download</div>
-            <div class="p-btn ghost">Detect images on this page</div>
-          </div>
-        </div>
-      </div>
+      <figure class="frame">
+        <img src="assets/pins-panel-instagram.webp" width="1900" height="1086" alt="An Instagram reel from frevana.ai open in Chrome, with the Pins panel beside it showing Video found, a preview of the reel and a Pin video button">
+      </figure>
     </div>
   </section>
 
@@ -339,22 +297,43 @@
         <h2>How to download a video with Pins</h2>
         <p>Three steps, no copying links into a downloader site.</p>
       </div>
-      <div class="steps">
-        <article class="step">
-          <div class="step-n">STEP 1</div>
-          <h3>Open the video</h3>
-          <p>Go to the page with the video you want. Click Frevana in Chrome's extensions menu and select Pin.</p>
-        </article>
-        <article class="step">
-          <div class="step-n">STEP 2</div>
-          <h3>Pin it</h3>
-          <p>Hover and click the Pin pill, right-click and choose Pin video, or let Pins find the video and click Pin video.</p>
-        </article>
-        <article class="step">
-          <div class="step-n">STEP 3</div>
-          <h3>Download</h3>
-          <p>Once the video is pinned, click Download to save the file. It also stays in My Pins for later.</p>
-        </article>
+      <div class="how-grid">
+        <ol class="steps">
+          <li class="step">
+            <h3>Open the video</h3>
+            <p>Go to the page with the video you want. Click Frevana in Chrome's extensions menu and select Pin.</p>
+          </li>
+          <li class="step">
+            <h3>Pin it</h3>
+            <p>Hover and click the Pin pill, right-click and choose Pin video, or let Pins find the video and click Pin video.</p>
+          </li>
+          <li class="step">
+            <h3>Download</h3>
+            <p>Once the video is pinned, click Download to save the file. It also stays in My Pins for later.</p>
+          </li>
+        </ol>
+        <figure class="lib-shot how-video">
+          <video src="assets/pins-how-it-works.mp4" poster="assets/pins-how-it-works-poster.jpg" width="1600" height="1040" autoplay muted loop playsinline controls preload="metadata" aria-label="Screen recording: opening Frevana from the Chrome toolbar, pinning a video, opening it in My Pins and downloading it"></video>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Pins library -->
+  <section class="section" id="my-pins">
+    <div class="container lib-grid">
+      <figure class="lib-shot">
+        <img src="assets/my-pins-library.webp" width="1646" height="1032" loading="lazy" alt="The My Pins library in Frevana, with tabs for All, Images, Videos, Posts and Collections, showing a pinned event poster, two saved X posts and three saved videos">
+      </figure>
+      <div class="lib-text">
+        <h2>Pin more than videos</h2>
+        <p>Pins saves the rest of what you find too, and it all lands in My Pins, so the ad you saw on Monday is still there on Friday.</p>
+        <ul>
+          <li><b>Images</b><span>Hover or right-click to pin one, or use Detect images on this page to pin several at once.</span></li>
+          <li><b>Posts</b><span>Open a post on X or LinkedIn, then choose Post found → Pin post.</span></li>
+          <li><b>Text</b><span>Highlight a passage and click the Pin pill beside it.</span></li>
+        </ul>
+        <a class="lib-link" href="https://www.frevana.com/tutorials/pin">Read the full Pins tutorial →</a>
       </div>
     </div>
   </section>
@@ -366,7 +345,7 @@
         <h2>Why teams use Pins as their video downloader</h2>
         <div class="prose">
           <p>Most video downloaders make you copy a link, paste it into a website full of ads, and hope the file comes back. Pins works where you already are: on the page, inside Chrome. Spot a video, pin it, and download it without leaving the tab.</p>
-          <p>Pins is built for marketers, creators and ecommerce teams who collect references every day. Videos, images, X and LinkedIn posts, and highlighted text all land in one My Pins library, so the ad you saw on Monday is still easy to find on Friday.</p>
+          <p>Pins is built for marketers, creators and ecommerce teams who collect references every day. It fits the way they already work: browse, spot something worth keeping, save it without breaking stride.</p>
           <p>Because Pins is part of Frevana, a download is a starting point rather than a dead end. Send a pinned video to ReGen to turn it into a reusable prompt, or open it in Ad Clone and AI Product Video Studio to make an on-brand version for your own product.</p>
         </div>
       </div>
@@ -462,7 +441,7 @@
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
-        <span class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24"><path d="M5 4h14v4H9v3h8v4H9v5H5z" fill="#8fd0a3"/></svg></span>Frevana</span>
+        <span class="brand"><svg class="brand-mark" aria-hidden="true"><use href="#i-frevana"/></svg>Frevana</span>
         <p>AI agent apps for more growth and less operations.</p>
       </div>
       <div class="foot-col"><h4>Product</h4><ul><li><a href="https://www.frevana.com/pricing">Pricing</a></li><li><a href="#">Download App</a></li><li><a href="#">Chrome Extension</a></li></ul></div>
@@ -474,6 +453,11 @@
   </div>
 </footer>
 
+<script>
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('video[autoplay]').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
+  }
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
